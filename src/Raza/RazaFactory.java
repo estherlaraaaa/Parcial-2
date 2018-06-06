@@ -5,6 +5,7 @@
  */
 package Raza;
 
+import Centro_de_Mando.Centro_de_Mando;
 import Edificacion.Edificacion;
 import Jugador.Jugador;
 import Jugador.Jugador1;
@@ -49,6 +50,11 @@ public class RazaFactory implements AbstractFactory {
     @Override
     public Milicia getMilicia(int type) {
         return null; 
+    }
+
+    @Override
+    public Centro_de_Mando getCentro_De_Mando(int type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
