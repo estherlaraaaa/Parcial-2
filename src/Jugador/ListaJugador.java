@@ -25,15 +25,12 @@ public void Agregar (int id, String nombre, int raza, int oro, int elixir, int d
     jugador.setId(id);
     jugador.setNombre(nombre);
     jugador.setRaza(raza);
-    jugador.setOro(oro);
-    jugador.setElixir(elixir);
-    jugador.setDiamantes(diamantes);
  
     listaj.add(jugador);
     
 }
 
-public void Mostrar (int id){
+/*public void Mostrar (int id){
     int count = 0;
     for (ConstructorLista jugador : listaj){
         if(id==listaj.get(count).id){
@@ -57,5 +54,9 @@ public void Mostrar (int id){
         
         }
 
-}
+}*/
+
+    void Mostrar(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
