@@ -5,6 +5,7 @@
  */
 package estherlara.sworld;
 
+import Centro_de_Mando.Centro_de_Mando;
 import Edificacion.Edificacion;
 import Jugador.Jugador;
 import Milicia.Milicia;
@@ -18,6 +19,8 @@ import Vehiculo.Vehiculo;
 public interface AbstractFactory {
 
     Jugador getJugador(int type);
+    
+    Centro_de_Mando getCentro_De_Mando(int type); 
 
     Edificacion getEdificacion(int type);
 
