@@ -5,6 +5,7 @@
  */
 package Edificacion;
 
+import Centro_de_Mando.Centro_de_Mando;
 import Jugador.Jugador;
 import Milicia.Milicia;
 import Raza.Raza;
@@ -37,8 +38,7 @@ public class EdificacionFactory implements AbstractFactory {
                 return new Diddea();
             case 6:
                 return new GrupoQ();
-            case 7:
-                return new Centro_de_Mando();
+            
 
         }
         return null;
@@ -58,5 +58,13 @@ public class EdificacionFactory implements AbstractFactory {
     public Milicia getMilicia(int type) {
         return null;
     }
+
+    @Override
+    public Centro_de_Mando getCentro_De_Mando(int type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+
 
 }
