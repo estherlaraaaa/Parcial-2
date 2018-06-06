@@ -17,20 +17,16 @@ public class ConstructorLista {
     int id;
     String nombre;
     int raza;
-    int oro;
-    int elixir;
-    int diamantes;
+
  
 
 
     public ConstructorLista(){}
-    public ConstructorLista(int id, String nombre, int raza, int oro, int elixir, int diamantes){
+    public ConstructorLista(int id, String nombre, int raza){
     this.id = id;
     this.nombre = nombre;
     this.raza = raza;
-    this.oro = oro;
-    this.elixir = elixir;
-    this.diamantes = diamantes;
+
     }
       public void setId(int id){
         this.id = id;
@@ -41,15 +37,6 @@ public class ConstructorLista {
     public void setRaza(int raza){
         this.raza = raza;
     }
-    public void setOro(int oro){
-        this.oro = oro;
-    }
-    public void setElixir(int elixir){
-        this.elixir = elixir;
-    }
-    public void setDiamantes(int diamantes){
-        this.diamantes = diamantes;
-    }
     public int getId(){
     return id;
     }
@@ -58,15 +45,6 @@ public class ConstructorLista {
     }
     public int getRaza(){
     return raza;
-    }
-    public int getOro(){
-    return oro;
-    }
-    public int getElixir(){
-    return elixir;
-    }
-    public int getDiamantes(){
-    return diamantes;
     }
 }
 
