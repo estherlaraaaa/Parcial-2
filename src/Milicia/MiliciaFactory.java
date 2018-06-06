@@ -5,6 +5,7 @@
  */
 package Milicia;
 
+import Centro_de_Mando.Centro_de_Mando;
 import Edificacion.Edificacion;
 import Jugador.Jugador;
 import Raza.Raza;
@@ -46,5 +47,10 @@ public class MiliciaFactory implements AbstractFactory {
                 return new Especialistas();
         }
         return null;
+    }
+
+    @Override
+    public Centro_de_Mando getCentro_De_Mando(int type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
