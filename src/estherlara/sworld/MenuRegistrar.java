@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package estherlara.sworld;
+
+import Edificacion.Edificacion;
+import Jugador.Jugador;
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ *
+ * @author User
+ */
+public class MenuRegistrar {
+
+    Scanner leer = new Scanner(System.in);
+
+    AbstractFactory factory;
+
+    public void Registro() {
+
+        for (int i = 1; i <= 2; i++) {
+            String nombre = "";
+            int raza = 0;
+
+            System.out.println("----------REGISTRANDO JUGADOR " + i + "--------------");
+            System.out.println("Ingrese su nombre por favor");
+            nombre = leer.nextLine();
+            System.out.println("Con qué raza desea jugar: \n1.Soldados. \n2.Duende. \n3.Extraterrestres.");
+            raza = leer.nextInt();
+            leer.nextLine();
+
+            factory = FactoryProducer.getFactory(1);
+            Jugador jugador = factory.getJugador(i);
+            jugador.registrar(i, nombre, raza);
+            
+            factory = FactoryProducer.getFactory(4);
+            Edificacion edificacion= factory.getEdificacion(7);
+            edificacion.crear(i);
+        }
+
+        MenuGeneral general = new MenuGeneral();
+
+        Random generadorAleatorios = new Random();
+ 
+        int random = 1 + generadorAleatorios.nextInt(2);
+        
+        general.SubMenu(random);
+
+    }
+
+}
