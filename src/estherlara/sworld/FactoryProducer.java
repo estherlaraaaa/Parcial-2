@@ -5,6 +5,7 @@
  */
 package estherlara.sworld;
 
+import Centro_de_Mando.Centro_de_MandoFactory;
 import Edificacion.EdificacionFactory;
 import Jugador.JugadorFactory;
 import Milicia.MiliciaFactory;
@@ -21,12 +22,14 @@ public interface FactoryProducer {
             case 1:
                 return  new JugadorFactory();
             case 2:
-                return new RazaFactory();
+                return new Centro_de_MandoFactory();
             case 3:
-                return new VehiculoFactory();
+                return new RazaFactory();
             case 4:
-                return new EdificacionFactory();
+                return new VehiculoFactory();
             case 5:
+                return new EdificacionFactory();
+            case 6:
                 return new MiliciaFactory();
         }
         return null;
