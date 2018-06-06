@@ -10,5 +10,6 @@ package Centro_de_Mando;
  * @author User
  */
 public interface Centro_de_Mando {
-    
+    void almacenar();
+    void mejorar(); 
 }

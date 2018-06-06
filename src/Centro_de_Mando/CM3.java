@@ -9,6 +9,16 @@ package Centro_de_Mando;
  *
  * @author User
  */
-public class CM3 {
+public class CM3 implements Centro_de_Mando {
+
+    @Override
+    public void almacenar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mejorar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
