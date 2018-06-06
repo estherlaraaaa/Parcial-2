@@ -22,16 +22,15 @@ public class MenuGeneral {
         factory = FactoryProducer.getFactory(1);
         Jugador jugador = factory.getJugador(random);
         jugador.mostrarRecursos(random);
-        System.out.println("¿Qué deseas hacer?  \n1.Crear Edificacion. \n2. LAS TUYAS PAPI\n3.Crear Milicia. \n4.Atacar . \n5.Defender. \n6.Abandonar partida :(  ");
-
+        System.out.println("¿Qué deseas hacer?  \n1.Crear Edificacion. \n2. Mostrar Edificaciones. \n3.Crear Milicia. \n4.Atacar . \n5.Defender. \n6.Abandonar partida :(  ");
+        
     }
-
+    
     /*AGREGAR LO MISMO DE ARRIBA CON EDIFICACION*/
+
     public void SubMenu(int random) {
         int opcion = 0;
         int o = 0;
-        String opc = "";
-
         Scanner leer = new Scanner(System.in);
         while (opcion != 6) {
             Menu(random);
@@ -43,10 +42,9 @@ public class MenuGeneral {
                     System.out.println("¿Qué edificacion deseas crear?");
                     System.out.println("1.Recolectador de recursos 1. \n2. Recolectador de recursos 2. \n3. Generador de recursos. \n4. Cuartel de entrenamiento. \n5. Fabrica vehicular 1. \n6. Fabrica vehicular 2. ");
                     o = leer.nextInt();
-                    edificacion.crear(random);
-
+                    edificacion.crear(random);   
                     break;
-                case 2:
+                case 2:                   
                     edificacion.mostrar(random);
                     break;
                 case 3:
@@ -55,13 +53,7 @@ public class MenuGeneral {
                     break;
                 case 4:
                     System.out.println("¿Qué desea atacar?");
-                    System.out.println("Edificación : " + listae.get(count).nombreEdificacion);
-                    opc = leer.nextInt();
-                    if (random == 1) {
-                        edificacion.mostrar(1);;
-                    } else {
-                        edificacion.mostrar(2);;
-                    }
+                    System.out.println("Lista de enemigos...");
                     break;
                 case 5:
                     System.out.println("¿Qué desea defender?");
@@ -69,7 +61,7 @@ public class MenuGeneral {
                     break;
                 case 6:
                     System.out.println("¿Seguro que deseas abandonar la partida?\n1. Si\n2. No");
-
+                   
                     break;
                 default:
                     System.out.println("Por favor ingrese una opción valida.");
