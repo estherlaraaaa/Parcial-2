@@ -40,6 +40,10 @@ public class MenuRegistrar {
             factory = FactoryProducer.getFactory(4);
             Edificacion edificacion= factory.getEdificacion(7);
             edificacion.crear(i);
+            
+            factory = FactoryProducer.getFactory(4);
+            Edificacion edificacion= factory.getEdificacion(7);
+            edificacion.crear(i);
         }
 
         MenuGeneral general = new MenuGeneral();
