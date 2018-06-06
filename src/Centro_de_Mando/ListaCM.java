@@ -32,6 +32,21 @@ public class ListaCM {
     listaCM.add(centromando);
     
 }
-    
+    public void Mostrar (int id){
+    int count = 0;
+    for (ConstructorLista Centro_de_Mando : listaCM){
+        if(id==listaCM.get(count).id){
+            System.out.println("TURNO DEL JUGADOR:"+listaCM.get(count).nombre);
+            
+                System.out.println("Billetes "+listaCM.get(count).recurso1);
+                System.out.println("Coras "+listaCM.get(count).recurso2);
+                System.out.println("Centavos "+listaCM.get(count).recurso3); 
+        }
+       
+        count = count+1;
+        
+        }
+
+}
     
 }
