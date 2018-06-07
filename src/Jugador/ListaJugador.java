@@ -12,25 +12,40 @@ import java.util.ArrayList;
  * @author User
  */
 public class ListaJugador {
-    private ArrayList <ConstructorLista> listaj;
-    
-    public ListaJugador () {
-    
-    listaj= new ArrayList <>();
-     
-}
-    
-public void Agregar (int id, String nombre, int raza, int oro, int elixir, int diamantes){
-    ConstructorLista jugador = new ConstructorLista ();
-    jugador.setId(id);
-    jugador.setNombre(nombre);
-    jugador.setRaza(raza);
- 
-    listaj.add(jugador);
-    
-}
 
-/*public void Mostrar (int id){
+    private ArrayList<ConstructorLista> listaj;
+
+    public ListaJugador() {
+
+        listaj = new ArrayList<>();
+
+    }
+
+    public void Agregar(int id, String nombre, int raza, int oro, int elixir, int diamantes) {
+        ConstructorLista jugador = new ConstructorLista();
+        jugador.setId(id);
+        jugador.setNombre(nombre);
+        jugador.setRaza(raza);
+
+        listaj.add(jugador);
+
+    }
+
+    public void Mostrar(int id) {
+        int count = 0;
+        for (ConstructorLista jugador : listaj) {
+            if (id == listaj.get(count).id) {
+
+                System.out.println("TURNO DE: " + listaj.get(count).nombre);
+            }
+
+            count = count + 1;
+
+        }
+
+    }
+
+    /*public void Mostrar (int id){
     int count = 0;
     for (ConstructorLista jugador : listaj){
         if(id==listaj.get(count).id){
@@ -55,8 +70,4 @@ public void Agregar (int id, String nombre, int raza, int oro, int elixir, int d
         }
 
 }*/
-
-    void Mostrar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
