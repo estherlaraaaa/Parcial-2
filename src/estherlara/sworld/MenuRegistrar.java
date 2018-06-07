@@ -5,6 +5,7 @@
  */
 package estherlara.sworld;
 
+import Centro_de_Mando.Centro_de_Mando;
 import Edificacion.Edificacion;
 import Jugador.Jugador;
 import java.util.Random;
@@ -37,13 +38,9 @@ public class MenuRegistrar {
             Jugador jugador = factory.getJugador(i);
             jugador.registrar(i, nombre, raza);
             
-            factory = FactoryProducer.getFactory(4);
-            Edificacion edificacion= factory.getEdificacion(7);
-            edificacion.crear(i);
-            
-            factory = FactoryProducer.getFactory(4);
-            Edificacion edificacion= factory.getEdificacion(7);
-            edificacion.crear(i);
+            factory = FactoryProducer.getFactory(2);
+            Centro_de_Mando CM = factory.getCentro_De_Mando(i);
+            CM.crear();
         }
 
         MenuGeneral general = new MenuGeneral();
