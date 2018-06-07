@@ -22,8 +22,8 @@ public class Jugador1 implements Jugador {
     }
 
     @Override
-    public void mostrarRecursos(int id) {
-        listaJugador.Mostrar(id);
+    public void mostrarTurno(int id) {
+       listaJugador.Mostrar(id);
     }
-    
+
 }

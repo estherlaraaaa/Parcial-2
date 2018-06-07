@@ -17,12 +17,10 @@ public class Jugador2 implements Jugador {
     public void registrar(int id, String nombre, int raza) {
         listaJugador.Agregar(id, nombre, raza, 10000, 10000, 10);
     }
-
+    
     @Override
-    public void mostrarRecursos(int id) {
-        listaJugador.Mostrar(id);
+    public void mostrarTurno(int id) {
+       listaJugador.Mostrar(id);
     }
-
-
     
 }
