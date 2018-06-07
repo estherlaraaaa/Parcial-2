@@ -5,6 +5,7 @@
  */
 package estherlara.sworld;
 
+import Centro_de_Mando.Centro_de_Mando;
 import Edificacion.Edificacion;
 import Jugador.Jugador;
 import java.util.Scanner;
@@ -18,10 +19,13 @@ public class MenuGeneral {
     AbstractFactory factory;
 
     public void Menu(int random) {
-
         factory = FactoryProducer.getFactory(1);
         Jugador jugador = factory.getJugador(random);
-        jugador.mostrarRecursos(random);
+        jugador.mostrarTurno(random);
+        
+        factory = FactoryProducer.getFactory(2);
+        Centro_de_Mando CM = factory.getCentro_De_Mando(random);
+        CM.mostrarRecursos(random);
         System.out.println("¿Qué deseas hacer?  \n1.Crear Edificacion. \n2. Mostrar Edificaciones. \n3.Crear Milicia. \n4.Atacar . \n5.Defender. \n6.Abandonar partida :(  ");
         
     }
