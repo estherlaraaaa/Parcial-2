@@ -22,16 +22,26 @@ public class MenuGeneral {
         factory = FactoryProducer.getFactory(1);
         Jugador jugador = factory.getJugador(random);
         jugador.mostrarTurno(random);
-        
+
         factory = FactoryProducer.getFactory(2);
         Centro_de_Mando CM = factory.getCentro_De_Mando(random);
         CM.mostrarRecursos(random);
-        System.out.println("¿Qué deseas hacer?  \n1.Crear Edificacion. \n2. Mostrar Edificaciones. \n3.Crear Milicia. \n4.Atacar . \n5.Defender. \n6.Abandonar partida :(  ");
-        
-    }
-    
-    /*AGREGAR LO MISMO DE ARRIBA CON EDIFICACION*/
+        System.out.println("\033[35m¿Qué deseas hacer?  \n1.Crear Edificacion. \n2. Mostrar Edificaciones. \n3.Crear Milicia. \n4.Atacar . \n5.Defender. \n6.Abandonar partida :(  ");
 
+    }
+
+    public void MostrarEnemigo(int random) {
+        int enemigo;
+        if (random == 1) {
+            enemigo = 2;
+        } else {
+            enemigo = 1;
+
+        }
+
+    }
+
+    /*AGREGAR LO MISMO DE ARRIBA CON EDIFICACION*/
     public void SubMenu(int random) {
         int opcion = 0;
         int o = 0;
@@ -43,32 +53,32 @@ public class MenuGeneral {
             Edificacion edificacion = factory.getEdificacion(random);
             switch (opcion) {
                 case 1:
-                    System.out.println("¿Qué edificacion deseas crear?");
+                    System.out.println("\033[35m¿Qué edificacion deseas crear?");
                     System.out.println("1.Recolectador de recursos 1. \n2. Recolectador de recursos 2. \n3. Generador de recursos. \n4. Cuartel de entrenamiento. \n5. Fabrica vehicular 1. \n6. Fabrica vehicular 2. ");
                     o = leer.nextInt();
-                    edificacion.crear(random);   
+                    edificacion.crear(random);
                     break;
-                case 2:                   
+                case 2:
                     edificacion.mostrar(random);
                     break;
                 case 3:
-                    System.out.println("¿Qué Milicia deseas crear?");
+                    System.out.println("\033[35m¿Qué Milicia deseas crear?");
                     System.out.println("Lista de milicia");
                     break;
                 case 4:
-                    System.out.println("¿Qué desea atacar?");
-                    System.out.println("Lista de enemigos...");
+                    System.out.println("\033[35m¿Qué desea atacar?");
+                    MostrarEnemigo(random); 
                     break;
                 case 5:
-                    System.out.println("¿Qué desea defender?");
+                    System.out.println("\033[35m¿Qué desea defender?");
                     System.out.println("Lista de cosas que tengo");
                     break;
                 case 6:
-                    System.out.println("¿Seguro que deseas abandonar la partida?\n1. Si\n2. No");
-                   
+                    System.out.println("\033[35m¿Seguro que deseas abandonar la partida?\n1. Si\n2. No");
+
                     break;
                 default:
-                    System.out.println("Por favor ingrese una opción valida.");
+                    System.out.println("\033[31mPor favor ingrese una opción valida.");
             }
             if (random == 1) {
                 random = 2;
