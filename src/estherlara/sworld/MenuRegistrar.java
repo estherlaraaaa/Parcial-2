@@ -27,10 +27,10 @@ public class MenuRegistrar {
             String nombre = "";
             int raza = 0;
 
-            System.out.println("----------REGISTRANDO JUGADOR " + i + "--------------");
-            System.out.println("Ingrese su nombre por favor");
+            System.out.println("\033[36m----------REGISTRANDO JUGADOR " + i + "--------------");
+            System.out.println("\033[35mIngrese su nombre por favor");
             nombre = leer.nextLine();
-            System.out.println("Con qué raza desea jugar: \n1.Soldados. \n2.Duende. \n3.Extraterrestres.");
+            System.out.println("\033[35mCon qué raza desea jugar: \n1.Soldados. \n2.Duende. \n3.Extraterrestres.");
             raza = leer.nextInt();
             leer.nextLine();
 
