@@ -46,5 +46,9 @@ public class ConstructorLista {
     public int getRaza(){
     return raza;
     }
+
+    Object get(int count) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 
