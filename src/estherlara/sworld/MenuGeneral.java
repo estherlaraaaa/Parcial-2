@@ -36,8 +36,10 @@ public class MenuGeneral {
             enemigo = 2;
         } else {
             enemigo = 1;
-
         }
+        factory = FactoryProducer.getFactory(5);
+        Edificacion edificacion = factory.getEdificacion(1);
+        edificacion.mostrar(enemigo);
 
     }
 
@@ -49,17 +51,20 @@ public class MenuGeneral {
         while (opcion != 6) {
             Menu(random);
             opcion = leer.nextInt();
-            factory = FactoryProducer.getFactory(4);
-            Edificacion edificacion = factory.getEdificacion(random);
+
             switch (opcion) {
                 case 1:
                     System.out.println("\033[35m¿Qué edificacion deseas crear?");
                     System.out.println("1.Recolectador de recursos 1. \n2. Recolectador de recursos 2. \n3. Generador de recursos. \n4. Cuartel de entrenamiento. \n5. Fabrica vehicular 1. \n6. Fabrica vehicular 2. ");
                     o = leer.nextInt();
+                    factory = FactoryProducer.getFactory(5);
+                    Edificacion edificacion = factory.getEdificacion(o);
                     edificacion.crear(random);
                     break;
                 case 2:
-                    edificacion.mostrar(random);
+                    factory = FactoryProducer.getFactory(5);
+                    Edificacion edificacion2 = factory.getEdificacion(random);
+                    edificacion2.mostrar(random);
                     break;
                 case 3:
                     System.out.println("\033[35m¿Qué Milicia deseas crear?");
@@ -67,7 +72,7 @@ public class MenuGeneral {
                     break;
                 case 4:
                     System.out.println("\033[35m¿Qué desea atacar?");
-                    MostrarEnemigo(random); 
+                    MostrarEnemigo(random);
                     break;
                 case 5:
                     System.out.println("\033[35m¿Qué desea defender?");
