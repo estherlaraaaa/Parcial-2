@@ -36,9 +36,9 @@ public class ListaEdificacion {
     public void Mostrar(int id) {
         int count = 0;
         for (int i=0;i<listae.size();i++) {
-            if (id == listae.get(count).idjugador) {
-                System.out.println("EDIFICACIONES DEL JUGADOR :" + listae.get(count).idjugador);
+            if (id == listae.get(count).idjugador) {             
                 System.out.println("Edificación : "+listae.get(count).nombreEdificacion);
+                System.out.println("  ");
             }
             count = count + 1;
         }

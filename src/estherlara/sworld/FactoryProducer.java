@@ -24,11 +24,11 @@ public interface FactoryProducer {
             case 2:
                 return new Centro_de_MandoFactory();
             case 3:
-                return new RazaFactory();
-            case 4:
-                return new VehiculoFactory();
-            case 5:
                 return new EdificacionFactory();
+            case 4:
+                return new RazaFactory();
+            case 5:
+                return new VehiculoFactory();
             case 6:
                 return new MiliciaFactory();
         }

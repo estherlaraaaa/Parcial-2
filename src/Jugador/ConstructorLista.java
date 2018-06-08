@@ -48,7 +48,7 @@ public class ConstructorLista {
     }
 
     Object get(int count) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null; 
     }
 }
 

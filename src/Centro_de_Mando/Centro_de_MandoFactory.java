@@ -7,6 +7,8 @@ package Centro_de_Mando;
 
 import Edificacion.Edificacion;
 import Jugador.Jugador;
+import Jugador.Jugador1;
+import Jugador.Jugador2;
 import Milicia.Milicia;
 import Raza.Raza;
 import Vehiculo.Vehiculo;
@@ -20,32 +22,39 @@ public class Centro_de_MandoFactory implements AbstractFactory {
 
     @Override
     public Jugador getJugador(int type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null; 
     }
 
     @Override
     public Centro_de_Mando getCentro_De_Mando(int type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        switch (type) {
+            case 1:
+                return new CM1();
+            case 2:
+                return new CM2();
+            
+        }
+        return null;
     }
 
     @Override
     public Edificacion getEdificacion(int type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null; 
     }
 
     @Override
     public Raza getRaza(int type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null; 
     }
 
     @Override
     public Vehiculo getVehiculo(int type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null; 
     }
 
     @Override
     public Milicia getMilicia(int type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null; 
     }
     
 }

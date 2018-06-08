@@ -51,6 +51,6 @@ public class MiliciaFactory implements AbstractFactory {
 
     @Override
     public Centro_de_Mando getCentro_De_Mando(int type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null; 
     }
 }

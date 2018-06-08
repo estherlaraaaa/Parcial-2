@@ -20,22 +20,22 @@ public class CM1 implements Centro_de_Mando {
 
     @Override
     public void mejorar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
-    public void mostrarRecursos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void mostrarRecursos(int id) {
+       listaCM.Mostrar(id);
     }
 
     @Override
     public void pagar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void crear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        listaCM.Agregar(1, "Centro de Mando", 100, 1000, 500, 10);
     }
     
 }

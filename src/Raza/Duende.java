@@ -13,7 +13,7 @@ public class Duende implements Raza {
 
     @Override
     public void elegir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

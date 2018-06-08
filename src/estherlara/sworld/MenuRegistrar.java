@@ -29,10 +29,14 @@ public class MenuRegistrar {
 
             System.out.println("\033[36m----------REGISTRANDO JUGADOR " + i + "--------------");
             System.out.println("\033[35mIngrese su nombre por favor");
+            System.out.println("   ");
             nombre = leer.nextLine();
+            System.out.println("  ");
             System.out.println("\033[35mCon qué raza desea jugar: \n1.Soldados. \n2.Duende. \n3.Extraterrestres.");
+            System.out.println("  ");
             raza = leer.nextInt();
             leer.nextLine();
+            System.out.println("  ");
 
             factory = FactoryProducer.getFactory(1);
             Jugador jugador = factory.getJugador(i);

@@ -5,6 +5,7 @@
  */
 package Jugador;
 
+import static java.lang.Math.random;
 import java.util.ArrayList;
 
 /**
@@ -35,17 +36,19 @@ public class ListaJugador {
         int count = 0;
         for (ConstructorLista jugador : listaj) {
             if (id == listaj.get(count).id) {
-
-                System.out.println("TURNO DE: " + listaj.get(count).nombre);
+                System.out.println("\033[36mTURNO DE: " + listaj.get(count).nombre);
+                System.out.println("   ");
             }
 
             count = count + 1;
 
         }
-
+        ; 
     }
 
-    /*public void Mostrar (int id){
+    
+
+/*public void Mostrar (int id){
     int count = 0;
     for (ConstructorLista jugador : listaj){
         if(id==listaj.get(count).id){
