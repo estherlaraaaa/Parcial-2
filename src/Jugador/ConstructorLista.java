@@ -18,8 +18,6 @@ public class ConstructorLista {
     String nombre;
     int raza;
 
- 
-
 
     public ConstructorLista(){}
     public ConstructorLista(int id, String nombre, int raza){
