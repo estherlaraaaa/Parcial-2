@@ -40,10 +40,10 @@ public class ListaEdificacion {
     public void Mostrar(int id) {
         int count = 0;
         for (ConstructorLista edificacion : listae) {
-            if (id == listae.get(count).idjugador && listae.get(count).fase == 0) {
+            if (id == listae.get(count).idjugador && listae.get(count).fase == 0 && listae.get(count).vida > 0) {
                 System.out.println(listae.get(count).id + "\033[34m--" + listae.get(count).nombreEdificacion + " \033[34mVIDA: " +listae.get(count).vida);
 
-            } else if (id == listae.get(count).idjugador && listae.get(count).fase > 0) {
+            } else if (id == listae.get(count).idjugador && listae.get(count).fase > 0  && listae.get(count).vida > 0) {
                 System.out.println(listae.get(count).id + "\033[34m--" + listae.get(count).nombreEdificacion+ " \033[34mVIDA: " + listae.get(count).vida + " \033[35mNo esta lista");
             }
             count = count + 1;
@@ -65,20 +65,15 @@ public class ListaEdificacion {
     public void agarrarAtaque(int id, int mira, int ataque) {
         int count = 0;
         for (ConstructorLista edificacion : listae) {
-            int fase = 0;
-            if (listae.get(count).id == mira) {
-                if (listae.get(count).vida == 0) {
-                    if (id == 2) {
-                        fase = 1;
-                    } else {
-                        fase = 2;
-                    }
-                    listae.remove(count);
-                } else {
+              if (listae.get(count).id == mira) {
+                if (listae.get(count).vida > 0) {
                     listae.get(count).setVida(listae.get(count).getVida() - ataque);
+                } else {
+                    listae.get(count).setVida(0);
+                    
                 }
             }
-            count = count + 1; 
+            count += 1;
         }
     }
 
@@ -89,7 +84,7 @@ public class ListaEdificacion {
             if (listae.get(count).idjugador == id && listae.get(count).fase == 0 && "Generador de recursos".equals(listae.get(count).nombreEdificacion)) {
                 factory = FactoryProducer.getFactory(2);
                 Centro_de_Mando CM = factory.getCentro_De_Mando(id);
-                CM.generador(id, 0, 0, 15);
+                CM.generador(id, 100, 100, 15);
             }
             count = count + 1;
         }

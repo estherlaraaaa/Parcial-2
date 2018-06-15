@@ -9,9 +9,12 @@ import Centro_de_Mando.Centro_de_Mando;
 import static Edificacion.ConstructorLista.listaEdificacion;
 import static Edificacion.ConstructorLista.listaEdificacion2;
 import Jugador.Jugador;
+import Milicia.Milicia;
 import Raza.Raza;
+import Vehiculo.Vehiculo;
 import estherlara.sworld.AbstractFactory;
 import estherlara.sworld.FactoryProducer;
+import estherlara.sworld.MenuGeneral;
 import java.util.Scanner;
 
 /**
@@ -21,6 +24,12 @@ import java.util.Scanner;
 public class RecolectarR1 implements Edificacion {
 
     AbstractFactory factory;
+    Jugador jugador;
+    Milicia milicia;
+    Vehiculo vehiculo;
+    Centro_de_Mando CM;
+    Raza raza;
+    Edificacion edificacion;
 
     @Override
     public void crear(int idjugador) {
@@ -81,23 +90,108 @@ public class RecolectarR1 implements Edificacion {
     }
 
     @Override
-    public void mostrarMirador(int id) {
-        Scanner leer = new Scanner(System.in);
+    public void mostrarMirador(int id, int turno) {
+        MenuGeneral menu = new MenuGeneral();
+         Scanner leer = new Scanner(System.in);
         if (id == 1) {
             if (listaEdificacion.Verificar(id) == 1) {
                 listaEdificacion.Mostrar(id);
             } else {
                 factory = FactoryProducer.getFactory(2);
-                Centro_de_Mando CM = factory.getCentro_De_Mando(id);
-                CM.mostrarCM(id);                
+                CM = factory.getCentro_De_Mando(id);
+                CM.mostrarCM(id);
+
+                System.out.println("¿Deseas atacar centro de mando?\n1.Si\n2. No");
+                int o = 0;
+                int atacante = 0;
+                o = leer.nextInt();
+                leer.nextLine();
+                if (o == 1) {
+                    int n = 0;
+                    System.out.println("¿Con qué quieres atacar?\n1. Milicia\n2. Vehiculo");
+                    n = leer.nextInt();
+                    leer.nextLine();
+
+                    if (n == 1) {
+                        factory = FactoryProducer.getFactory(6);
+                        milicia = factory.getMilicia(1);
+                        milicia.mostrar(id);
+
+                        atacante = leer.nextInt();
+                        leer.nextLine();
+
+                        factory = FactoryProducer.getFactory(2);
+                        CM = factory.getCentro_De_Mando(id);
+                        CM.agarrarAtaque(id, id, atacante);
+
+                    } else if (n == 2) {
+                        factory = FactoryProducer.getFactory(5);
+                        vehiculo = factory.getVehiculo(1);
+                        vehiculo.mostrar(id);
+
+                        atacante = leer.nextInt();
+                        leer.nextLine();
+
+                        factory = FactoryProducer.getFactory(2);
+                        CM = factory.getCentro_De_Mando(id);
+                        CM.agarrarAtaque(id, id, atacante);
+                    }
+                    menu.CambiarFase(2, turno);
+                } else {
+                    menu.CambiarFase(1, turno-1);
+                }
+
             }
-        } else {
+
+        } else if (id == 2) {
             if (listaEdificacion2.Verificar(id) == 1) {
                 listaEdificacion2.Mostrar(id);
             } else {
+
                 factory = FactoryProducer.getFactory(2);
-                Centro_de_Mando CM = factory.getCentro_De_Mando(id);
+                CM = factory.getCentro_De_Mando(id);
                 CM.mostrarCM(id);
+
+                System.out.println("¿Deseas atacar centro de mando?\n1.Si\n2. No");
+                int o = 0;
+                int atacante = 0;
+                o = leer.nextInt();
+                leer.nextLine();
+                if (o == 1) {
+                    int n = 0;
+                    System.out.println("¿Con qué quieres atacar?\n1. Milicia\n2. Vehiculo");
+                    n = leer.nextInt();
+                    leer.nextLine();
+
+                    if (n == 1) {
+                        factory = FactoryProducer.getFactory(6);
+                        milicia = factory.getMilicia(1);
+                        milicia.mostrar(id);
+
+                        atacante = leer.nextInt();
+                        leer.nextLine();
+
+                        factory = FactoryProducer.getFactory(2);
+                        CM = factory.getCentro_De_Mando(id);
+                        CM.agarrarAtaque(id, id, atacante);
+
+                    } else if (n == 2) {
+                        factory = FactoryProducer.getFactory(5);
+                        vehiculo = factory.getVehiculo(1);
+                        vehiculo.mostrar(id);
+
+                        atacante = leer.nextInt();
+                        leer.nextLine();
+
+                        factory = FactoryProducer.getFactory(2);
+                        CM = factory.getCentro_De_Mando(id);
+                        CM.agarrarAtaque(id, id, atacante);
+                    }
+                    menu.CambiarFase(1, turno);
+                } else {
+                    menu.CambiarFase(2, turno-1);
+                }
+
             }
         }
     }

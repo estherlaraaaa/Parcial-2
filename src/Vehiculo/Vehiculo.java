@@ -10,6 +10,9 @@ package Vehiculo;
  * @author User
  */
 public interface Vehiculo {
-    void crear(); 
+    void crear(int idjugador); 
+    void atacar(int idjugador); 
+    void mostrar(int id); 
+    void ponerMira(int id, int atacando, int mira); 
     
 }

@@ -113,7 +113,7 @@ public class MenuGeneral {
         System.out.println(" ");
         factory = FactoryProducer.getFactory(3);
         edificacion = factory.getEdificacion(1);
-        edificacion.mostrarMirador(enemigo);
+        edificacion.mostrarMirador(enemigo,turno);
         atacando = leer.nextInt();
 
         int w = 0;
@@ -202,8 +202,6 @@ public class MenuGeneral {
                     case 4:
                         Atacar(random, turno);
                         System.out.println("  ");
-                        CambiarFase(random, turno);
-                        System.out.println("   ");
                         break;
 
                     case 5:

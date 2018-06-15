@@ -10,13 +10,14 @@ import Raza.Raza;
 import estherlara.sworld.AbstractFactory;
 import estherlara.sworld.FactoryProducer;
 import java.util.ArrayList;
-
+import estherlara.sworld.Final;
+import estherlara.sworld.MenuGeneral;
 /**
  *
  * @author User
  */
 public class ListaCM {
-
+    MenuGeneral general = new MenuGeneral();
     private ArrayList<ConstructorLista> listaCM;
 
     public ListaCM() {
@@ -76,10 +77,17 @@ public class ListaCM {
 
     public void Pagar(int id, int recurso1, int recurso2, int recurso3) {
         int count = 0;
+        int turno = 0;
+        if(id==1){
+            turno = 2;
+        }else{
+            turno = 3;
+        }
         for (int i = 0; i < listaCM.size(); i++) {
             if (listaCM.get(count).id == id) {
                 if (listaCM.get(count).recurso1 < recurso1 || listaCM.get(count).recurso2 < recurso2 || listaCM.get(count).recurso3 < recurso3) {
                     System.out.println("\033[32mNO CUENTA CON SUFICIENTE DINERO");
+                    general.CambiarFase(turno, 1);
                 } else {
                     listaCM.get(count).setRecurso1(listaCM.get(count).getRecurso1() - recurso1);
                     listaCM.get(count).setRecurso2(listaCM.get(count).getRecurso2() - recurso2);
@@ -173,20 +181,16 @@ public class ListaCM {
     public void agarrarAtaque(int id, int mira, int ataque) {
         int count = 0;
         for (ConstructorLista centromando : listaCM) {
-            int fase = 0;
-            if (listaCM.get(count).id == mira) {
-                if (listaCM.get(count).vida == 0) {
-                    if (id == 2) {
-                        fase = 1;
-                    } else {
-                        fase = 2;
-                    }
-                    listaCM.remove(count);
-                } else {
+             if (listaCM.get(count).id == mira) {
+                if (listaCM.get(count).vida > 0) {
                     listaCM.get(count).setVida(listaCM.get(count).getVida() - ataque);
+                } else {
+                    listaCM.get(count).setVida(0);
+                    Final ganador = new Final();
+                    ganador.mostrar(id);
                 }
             }
-            count = count + 1; 
+            count += 1;
         }
     }
     

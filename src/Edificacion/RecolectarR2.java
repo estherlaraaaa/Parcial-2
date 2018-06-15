@@ -77,7 +77,7 @@ public class RecolectarR2 implements Edificacion {
     }
 
     @Override
-    public void mostrarMirador(int id) {
+    public void mostrarMirador(int id, int turno) {
         if (id == 1) {
             if (listaEdificacion.Verificar(id) == 1) {
                 listaEdificacion.Mostrar(id);

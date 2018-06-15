@@ -15,5 +15,5 @@ public interface Edificacion {
     void CambiarFase(int id); 
     void generadorR(int id); 
     void agarrarAtaque(int id, int mira, int ataque); 
-    void mostrarMirador(int id);
+    void mostrarMirador(int id, int turno);
 }
