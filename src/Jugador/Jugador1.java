@@ -17,7 +17,7 @@ public class Jugador1 implements Jugador {
 
     @Override
     public void registrar(int id, String nombre, int raza) {
-        listaJugador.Agregar(id, nombre, raza, 10000, 10000, 10);
+        listaJugador.Agregar(id, nombre, raza, 0, 0, 0);
 
     }
 
@@ -25,5 +25,12 @@ public class Jugador1 implements Jugador {
     public void mostrarTurno(int id) {
        listaJugador.Mostrar(id);
     }
+
+    @Override
+    public int EnseñarRaza(int id) {
+        return listaJugador.EnseñarRaza(id);
+    }
+
+
 
 }
