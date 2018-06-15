@@ -31,6 +31,19 @@ public class ListaJugador {
         listaj.add(jugador);
 
     }
+    
+    public void Agregar(ConstructorLista jugador) throws Exception{
+        if(jugador != null){
+            if (!listaj.contains(jugador)) {
+                listaj.add(jugador);               
+            }
+            Exception e = new Exception("\033[31mNO PUEDEN JUGADORES DUPLICADOS");
+            throw e;
+        }else{
+            throw new Exception("\033[31mNO EXISTE JUGADOR NULO");
+        }
+    }
+    
 
     public void Mostrar(int id) {
         int count = 0;
@@ -43,9 +56,20 @@ public class ListaJugador {
             count = count + 1;
 
         }
-        ; 
+       
     }
 
+    public int EnseñarRaza(int id){
+        int count = 0;
+        int raza = 0; 
+        for (ConstructorLista jugador : listaj) {
+            if (id == listaj.get(count).id) {
+                raza= listaj.get(count).raza; 
+            }
+            count = count + 1;
+        }  
+        return raza; 
+        }
     
 
 /*public void Mostrar (int id){
