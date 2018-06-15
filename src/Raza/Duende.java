@@ -12,8 +12,20 @@ package Raza;
 public class Duende implements Raza {
 
     @Override
-    public void elegir() {
-        
+    public int vida(int vida) {
+        return vida; 
     }
+
+    @Override
+    public int ataque(int ataque) {
+        return ataque; 
+    }
+
+
+    @Override
+    public int fase(int fase) {
+        return fase= fase  - 1;
+    }
+
     
 }

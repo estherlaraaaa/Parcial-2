@@ -10,6 +10,10 @@ package Raza;
  * @author User
  */
 public interface Raza {
-    void elegir(); 
+    
+    int vida(int vida);
+    int ataque(int ataque);
+    int fase(int fase); 
+    
     
 }

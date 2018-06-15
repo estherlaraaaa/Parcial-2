@@ -5,6 +5,7 @@
  */
 package Raza;
 
+
 /**
  *
  * @author User
@@ -12,8 +13,21 @@ package Raza;
 public class Extraterrestre implements Raza {
 
     @Override
-    public void elegir() {
-        
+    public int vida(int vida) {
+        return vida= vida + 200; 
     }
+
+    @Override
+    public int ataque(int ataque) {
+        return ataque; 
+    }
+
+
+    @Override
+    public int fase(int fase) {
+        return fase; 
+    }
+
+   
     
 }
