@@ -14,6 +14,8 @@ import java.util.Scanner;
 public class ConstructorLista {
 
     static ListaEdificacion listaEdificacion = new ListaEdificacion();
+    static ListaEdificacion listaEdificacion2 = new ListaEdificacion();
+    
     Scanner leer = new Scanner(System.in);
 
     int id;

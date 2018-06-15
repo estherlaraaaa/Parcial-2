@@ -12,5 +12,8 @@ package Edificacion;
 public interface Edificacion {
     void crear(int idjugador); 
     void mostrar(int id); 
-    
+    void CambiarFase(int id); 
+    void generadorR(int id); 
+    void agarrarAtaque(int id, int mira, int ataque); 
+    void mostrarMirador(int id);
 }
