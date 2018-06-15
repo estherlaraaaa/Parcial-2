@@ -21,15 +21,17 @@ public class ConstructorLista {
     int recurso2;
     int recurso3;
     int nivel; 
+    int vida;
     
     public ConstructorLista(){}
-    public ConstructorLista(int id, String nombre, int recurso1, int recurso2, int recurso3, int nivel){
+    public ConstructorLista(int id, String nombre, int recurso1, int recurso2, int recurso3, int nivel, int pagar, int vida){
     this.id = id;
     this.nombre = nombre;
     this.recurso1 = recurso1;
     this.recurso2 = recurso2;
     this.recurso3 = recurso3;
     this.nivel = nivel;
+    this.vida = vida;
     }
       public void setId(int id){
         this.id = id;
@@ -49,7 +51,9 @@ public class ConstructorLista {
     public void setNivel(int nivel){
         this.nivel = nivel;
     }
-    
+    public void setVida(int vida){
+        this.vida=vida;
+    }
     public int getId(){
     return id;
     }
@@ -67,6 +71,9 @@ public class ConstructorLista {
     }
     public int getNivel(){
     return nivel;
+    }
+    public int getVida(){
+        return vida;
     }
     
 }
