@@ -12,7 +12,10 @@ package Centro_de_Mando;
 public interface Centro_de_Mando {
     void crear(); 
     void almacenar();
-    void mejorar(); 
+    void mejorar(int id); 
     void mostrarRecursos(int id); 
-    void pagar(); 
+    void pagar(int idjugador, int recurso1, int recurso2, int recurso3); 
+    void mostrarCM(int id); 
+    void generador(int id, int recurso1, int recurso2, int recurso3); 
+    void agarrarAtaque(int id, int mira, int ataque); 
 }
