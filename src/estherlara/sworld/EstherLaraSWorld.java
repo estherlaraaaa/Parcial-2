@@ -14,7 +14,7 @@ package estherlara.sworld;
 public class EstherLaraSWorld {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         
         MenuRegistrar registro = new MenuRegistrar (); 
         
