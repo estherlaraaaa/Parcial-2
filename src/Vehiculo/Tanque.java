@@ -5,15 +5,63 @@
  */
 package Vehiculo;
 
+import Jugador.Jugador;
+import Raza.Raza;
+import static Vehiculo.ConstructorLista.listaVehiculo;
+import static Vehiculo.ConstructorLista.listaVehiculo2;
+import estherlara.sworld.AbstractFactory;
+import estherlara.sworld.FactoryProducer;
+
 /**
  *
  * @author User
  */
-public class Tanque implements Vehiculo{
+public class Tanque implements Vehiculo {
+
+    AbstractFactory factory;
 
     @Override
-    public void crear() {
+    public void atacar(int idjugador) {
+        if (idjugador == 1) {
+            listaVehiculo.Atacar();
+        } else {
+            listaVehiculo2.Atacar();
+        }
+    }
+
+    @Override
+    public void crear(int idjugador) {
+        factory = FactoryProducer.getFactory(1);
+        Jugador jugador = factory.getJugador(idjugador);
+
+        factory = FactoryProducer.getFactory(4);
+        Raza raza = factory.getRaza(jugador.EnseñarRaza(idjugador));
+        
+        if(idjugador==1){
+            listaVehiculo.Agregar("Tanque", idjugador, raza.vida(2000), raza.ataque(800), raza.fase(1));
+        }else{
+            listaVehiculo2.Agregar("Tanque", idjugador, raza.vida(2000), raza.ataque(800), raza.fase(1));
+        }
+
         
     }
-    
+
+    @Override
+    public void mostrar(int id) {
+        if (id == 1) {
+            listaVehiculo.Mostrar(id);
+        } else {
+            listaVehiculo2.Mostrar(id);
+        }
+    }
+
+    @Override
+    public void ponerMira(int id, int atacando, int mira) {
+        if (id == 1) {
+            listaVehiculo.ponerMira(id, atacando, mira);
+        } else {
+            listaVehiculo2.ponerMira(id, atacando, mira);
+        }
+    }
+
 }
