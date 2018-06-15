@@ -13,6 +13,7 @@ import Milicia.Milicia;
 import Raza.Raza;
 import Vehiculo.Vehiculo;
 import estherlara.sworld.AbstractFactory;
+import java.util.InputMismatchException;
 
 /**
  *
@@ -22,39 +23,45 @@ public class Centro_de_MandoFactory implements AbstractFactory {
 
     @Override
     public Jugador getJugador(int type) {
-        return null; 
+        return null;
     }
 
     @Override
     public Centro_de_Mando getCentro_De_Mando(int type) {
-        switch (type) {
-            case 1:
-                return new CM1();
-            case 2:
-                return new CM2();
-            
+        try {
+            switch (type) {
+                case 1:
+                    return new CM1();
+                case 2:
+                    return new CM2();
+
+            }
+            return null;
+        } catch (InputMismatchException e) {
+            System.err.println("Por favor, ingrese una de las opciones.");
+
         }
         return null;
     }
 
     @Override
     public Edificacion getEdificacion(int type) {
-        return null; 
+        return null;
     }
 
     @Override
     public Raza getRaza(int type) {
-        return null; 
+        return null;
     }
 
     @Override
     public Vehiculo getVehiculo(int type) {
-        return null; 
+        return null;
     }
 
     @Override
     public Milicia getMilicia(int type) {
-        return null; 
+        return null;
     }
-    
+
 }
